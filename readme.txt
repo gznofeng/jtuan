@@ -1,1 +1,1 @@
-Jtuan，基于JAVA技术开发的团购网站
+Jtuan锛屽熀浜嶫AVA鎶�鏈紑鍙戠殑鍥㈣喘缃戠珯

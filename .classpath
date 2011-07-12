@@ -40,9 +40,6 @@
 	<classpathentry kind="lib" path="lib/org.springframework.web.servlet-3.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/org.springframework.web.struts-3.0.5.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/org.springframework.web-3.0.5.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/sqlitejdbc-v056.jar"/>
 	<classpathentry kind="lib" path="lib/standard.jar"/>
-	<classpathentry kind="lib" path="lib/svnkit.jar"/>
-	<classpathentry kind="lib" path="lib/jackson-all-1.7.7.jar"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>
