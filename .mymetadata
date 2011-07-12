@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="jtuan"
+  id="myeclipse.1309314517976"
+  context-root="/jtuan"
+  j2ee-spec="5.0"
+  archive="jtuan.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

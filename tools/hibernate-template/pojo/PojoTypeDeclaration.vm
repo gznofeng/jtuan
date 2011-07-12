@@ -1,0 +1,6 @@
+import framework.dao.*;
+import org.springframework.stereotype.Repository;
+
+$templates.Ejb3TypeDeclaration
+@Repository
+$pojo.getClassModifiers() $pojo.getDeclarationType() $pojo.getDeclarationName() extends Dao<$pojo.getDeclarationName()>$pojo.getExtendsDeclaration() $pojo.getImplementsDeclaration()

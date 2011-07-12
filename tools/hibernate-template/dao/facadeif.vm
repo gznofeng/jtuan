@@ -1,0 +1,25 @@
+$pojo.getPackageDeclaration()
+
+$secondpassclassimports
+#set($declarationName=$pojo.importType($pojo.getDeclarationName()))
+/**
+ * ${ifType} interface for ${declarationName}Facade.
+ * @author MyEclipse Persistence Tools
+ */
+@$pojo.importType("javax.ejb.${ifType}")
+#set($className="${declarationName}Facade${ifType}")
+
+public interface $className {
+    public void save(${declarationName} transientInstance);
+    public void delete(${declarationName} persistentInstance);
+	public ${declarationName} update(${declarationName} detachedInstance);
+	public ${declarationName} findById( $pojo.getJavaTypeName($clazz.identifierProperty, $jdk5) id);
+	public $pojo.importType("java.util.List") findByProperty(String propertyName, Object value);
+#if ($generatePreciseFindBy)
+#foreach($property in $pojo.getFindByIterator())
+#if($pojo.getMetaAttribAsBool($property, "gen-property", true)) 
+	public List findBy$pojo.getPropertyName($property)(Object $property.Name);
+#end
+#end   
+#end
+}

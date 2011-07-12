@@ -1,0 +1,22 @@
+#if($ejb3)
+#if($pojoMode == 1 && !$pojo.isComponent()) 
+@$pojo.importType("javax.persistence.MappedSuperclass")
+#elseif($pojo.isComponent())
+@$pojo.importType("javax.persistence.Embeddable")
+#else
+@$pojo.importType("javax.persistence.Entity")
+#if($pojoMode != 1)
+@$pojo.importType("javax.persistence.Table")(name="$clazz.table.name"
+#if ($clazz.table.schema)
+    ,schema="$clazz.table.schema"
+#end
+#if ($clazz.table.catalog)
+    ,catalog="$clazz.table.catalog"
+#end
+#if ($pojo.needsAnnTableUniqueConstraints())
+, uniqueConstraints = { $pojo.generateAnnTableUniqueConstraint() }
+#end
+)
+#end
+#end
+#end

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"
+	default-autowire="byName">
+
+	<bean id="sqliteDao" class="framework.dao.JdbcDao">
+		<property name="dataSource" ref="sqliteDataSource"></property>
+		<property name="sqlDialect" ref="sqliteDialect"></property>
+	</bean>
+	
+	<bean id="sqliteDialect" name="sqlDialect" class="framework.dao.dialect.SqliteDialect"/>
+	
+	<!-- sqliteDataSource配置 -->
+	<bean id="sqliteDataSource" name="sqliteDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+        <property name="driverClassName">
+            <value>org.sqlite.JDBC</value>
+        </property>
+        <property name="url">
+            <value>jdbc:sqlite:db/framework.db</value>
+        </property>
+    </bean>
+
+  	
+</beans>
